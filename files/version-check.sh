@@ -4,11 +4,7 @@
 # If you have tools installed in other directories, adjust PATH here AND
 # in ~lfs/.bashrc (section 4.4) as well.
 
-<<<<<<< Updated upstream
-LC_ALL=C
-=======
 LC_ALL=C 
->>>>>>> Stashed changes
 PATH=/usr/bin:/bin
 
 bail() { echo "FATAL: $1"; exit 1; }
@@ -26,15 +22,9 @@ ver_check()
    if printf '%s\n' $3 $v | sort --version-sort --check &>/dev/null
    then 
      printf "OK:    %-9s %-6s >= $3\n" "$1" "$v"; return 0;
-<<<<<<< Updated upstream
-   else
-     printf "ERROR: %-9s is TOO OLD ($3 or later required)\n" "$1";
-     return 1;
-=======
    else 
      printf "ERROR: %-9s is TOO OLD ($3 or later required)\n" "$1"; 
      return 1; 
->>>>>>> Stashed changes
    fi
 }
 
@@ -44,15 +34,9 @@ ver_kernel()
    if printf '%s\n' $1 $kver | sort --version-sort --check &>/dev/null
    then 
      printf "OK:    Linux Kernel $kver >= $1\n"; return 0;
-<<<<<<< Updated upstream
-   else
-     printf "ERROR: Linux Kernel ($kver) is TOO OLD ($1 or later required)\n" "$kver";
-     return 1;
-=======
    else 
      printf "ERROR: Linux Kernel ($kver) is TOO OLD ($1 or later required)\n" "$kver"; 
      return 1; 
->>>>>>> Stashed changes
    fi
 }
 
@@ -77,11 +61,7 @@ ver_check Sed            sed      4.1.5
 ver_check Tar            tar      1.22
 ver_check Texinfo        texi2any 5.0
 ver_check Xz             xz       5.0.0
-<<<<<<< Updated upstream
-ver_kernel 4.19
-=======
 ver_kernel 5.4 
->>>>>>> Stashed changes
 
 if mount | grep -q 'devpts on /dev/pts' && [ -e /dev/ptmx ]
 then echo "OK:    Linux Kernel supports UNIX 98 PTY";
